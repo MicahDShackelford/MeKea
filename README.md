@@ -4,7 +4,7 @@
 
 ## Related Projects
 
-  - https://github.com/FEC3/images-proxy-Amer
+  - https://github.com/FEC3/images-service-Amer
   - https://github.com/FEC3/reviews
 
 ## Table of Contents
