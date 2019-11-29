@@ -4,8 +4,8 @@
 
 ## Related Projects
 
-  - https://github.com/FEC3/images-service-Amer
-  - https://github.com/FEC3/reviews
+  - https://github.com/FEC3/images-service
+  - https://github.com/FEC3/reviews-service
 
 ## Table of Contents
 
