@@ -14,6 +14,7 @@ db.once('open', () => {
 });
 
 const productSchema = new mongoose.Schema({ // Create a schema that each product will follow
+  id: Number,
   name: String,
   shortDesc: String,
   price: Number,
