@@ -1,17 +1,18 @@
 import React from 'react';
+import ProductDisplay from './ProductDisplay';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      product: {}
     }
   }
 
   render() {
     return (
       <div id="app">
-        <h1>Hello from the app</h1>
+        <ProductDisplay product={this.props.product} />
       </div>
     )
   }
