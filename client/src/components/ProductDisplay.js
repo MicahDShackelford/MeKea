@@ -8,15 +8,16 @@ import ButtonGroup from './ButtonGroup';
 import AdditionalInformation from './AdditionalInformation';
 
 let ProductDisplay = (props) => {
+  console.log(props);
   return (
     <div id="product-display">
-      <Tagline />
-      <Ratings />
-      <Desc />
-      <Options />
-      <Quantity />
-      <ButtonGroup />
-      <AdditionalInformation />
+      <Tagline product={props.product} />
+      <Ratings product={props.product} />
+      <Desc product={props.product} />
+      <Options product={props.product} />
+      <Quantity product={props.product} />
+      <ButtonGroup product={props.product} />
+      <AdditionalInformation product={props.product} />
     </div>
   )
 }
