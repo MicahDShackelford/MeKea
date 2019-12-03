@@ -1,11 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
 import ProductDisplay from './ProductDisplay';
 
-const style = {
-  universal: {
-    'fontFamily': 'Noto Sans'
-  }
-}
+const UniversalStyle = styled.div`
+  font-family: 'Noto Sans';
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
 
 class App extends React.Component {
   constructor(props) {
@@ -43,9 +47,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="app" style={style.universal}>
+      <UniversalStyle>
         <ProductDisplay product={this.state.product} />
-      </div>
+      </UniversalStyle>
     )
   }
 }
