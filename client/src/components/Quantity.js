@@ -17,6 +17,9 @@ const Counter = styled.div`
     font-size: 0.8em;
     color: rgba(0,0,0,1)
   }
+  svg:hover {
+    cursor:pointer;
+  }
   #sub {
     color: rgba(0,0,0,0.2)
   }
@@ -39,8 +42,8 @@ let Quantity = (props) => {
           }}/>
         <h4>{count}</h4>
         <FaPlus onClick={() => {
-          setCount(count+1)
-          document.getElementById('sub').style.color = "rgba(0,0,0,1)"
+          setCount(count+1);
+          document.getElementById('sub').style.color = "rgba(0,0,0,1)";
           }}/>
       </Counter>
     </QuantityCont>
