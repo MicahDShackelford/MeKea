@@ -5,8 +5,7 @@ import { IoIosArrowDown, IoIosClose } from 'react-icons/io';
 const OptionsContainer = styled.div`
   display: flex;
   flex-direction: column;
-`
-
+`;
 const Dropdown = styled.div`
   display: flex;
   flex-direction: row;
@@ -19,15 +18,18 @@ const Dropdown = styled.div`
   ${Dropdown}:hover {
     cursor: pointer;
   }
-`
+  ${Dropdown} > * {
+    pointer-events: none;
+  }
+`;
 const DropdownText = styled.div`
   *{
     margin: 0.25em;
   }
-`
+`;
 const ArrowDown = styled(IoIosArrowDown)`
   font-size: 1.75em;
-`
+`;
 const Modal = styled.div`
   display: none;
   position: fixed;
@@ -37,14 +39,14 @@ const Modal = styled.div`
   background: #fff;
   img {
     width: 250px;
-    height: auto;
+    height: 250px;
   }
   z-index: 6;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
-`
+`;
 const ModalHead = styled.div`
   display: flex;
   flex-direction: row;
@@ -65,12 +67,13 @@ const ModalHead = styled.div`
   .CloseOptions > * {
     pointer-events: none;
   }
-`
+`;
 const ModalOptionCont = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-`
+  justify-content: center;
+`;
 const ModalBg = styled.div`
   display: none;
   position: fixed;
@@ -80,7 +83,7 @@ const ModalBg = styled.div`
   width: 100vw;
   background: rgba(0,0,0,0.4);
   z-index: 4;
-`
+`;
 const ModalCont = styled.div`
   display: none;
   position: fixed;
@@ -91,30 +94,37 @@ const ModalCont = styled.div`
   justify-content: center;
   align-items:center;
   z-index:5
-`
+`;
 
 const ModalOption = styled.div`
-  flex: 1;
-  padding: 50px 20px;
+  width: 300px;
+  height: 325px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    padding-top: 0.75em;
+  }
   ${ModalOption}:hover {
     background: #F7F7F7;
-    transition: 0.25s ease;
+    // transition: 0.25s ease;
     cursor: pointer;
   }
   ${ModalOption}:hover img {
-    width: 300px;
-    height: auto;
-    transition: 0.3s ease;
+    width: 260px;
+    height: 260px;
+    transition: 0.2s ease;
+  }
+  ${ModalOption}:hover p {
+    margin-bottom: 1em;
   }
   img {
-    transition 0.3s ease;
+    transition 0.2s ease;
   }
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-
+`;
+const WeightedP = styled.p`
+  font-weight: 600;
+`;
 
 
 let Options = (props) => {
@@ -134,7 +144,7 @@ let Options = (props) => {
   }
   return (
     <OptionsContainer>
-    <h4>This price reflects slected options.</h4>
+    <WeightedP>This price reflects slected options.</WeightedP>
         {props.product.options.map((option) => (
           <div key={option.name}>
             <Dropdown onClick={modalToggle} id={`dropdown-${option.name}`}>
@@ -160,8 +170,10 @@ let Options = (props) => {
                 <ModalOptionCont>
                   {option.options.map((subOption, i) => (
                     <ModalOption key={subOption.name}>
-                      <img src={subOption.image}></img>
-                      <p>{subOption.name}</p>
+                      <img src={`https://source.unsplash.com/250x250/?${option.name},${subOption.name}`}></img>
+                      <div>
+                        <p>{subOption.name}</p>
+                      </div>
                     </ModalOption>
                   ))}
                 </ModalOptionCont>

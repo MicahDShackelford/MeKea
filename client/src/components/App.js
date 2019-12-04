@@ -9,6 +9,9 @@ const UniversalStyle = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  *{
+    margin: 0.25em 0;
+  }
 `
 
 class App extends React.Component {

@@ -17,6 +17,23 @@ const Link = styled.a`
     text-decoration: underline;
   }
 `
+const ReviewContainer = styled.div`
+  display: flex;
+  flex-direction = row;
+  align-items: center;
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0.25em;
+  }
+  div:first-child {
+    margin-left: 0;
+  }
+  div:last-child {
+    margin-right: 0;
+  }
+`
 
 
 let Ratings = (props) => {
@@ -32,16 +49,17 @@ let Ratings = (props) => {
     console.log(stars);
   }
   return (
-    <div id="ratings">
+    <ReviewContainer id="ratings">
       <div className="star-ratings">
         {stars.map((star, i) => (
           <span key={`star-${i}`}>{star}</span>
         ))}
       </div>
+        <p>{props.product.review.stars}.0</p>
       <div className="num-ratings">
-        <Link href="#">{props.product.review.reviews}</Link>
+        <Link href="#">{props.product.review.reviews} Reviews</Link>
       </div>
-    </div>
+    </ReviewContainer>
   )
 }
 
