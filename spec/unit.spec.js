@@ -7,6 +7,7 @@ import ProductDisplay from '../client/src/components/ProductDisplay';
 import Quantity from '../client/src/components/Quantity';
 import Tagline from '../client/src/components/Tagline';
 import Ratings from '../client/src/components/Ratings';
+import Desc from '../client/src/components/Desc';
 
 describe('App Component', () => {
   test('Should Contain essential elements', () => {
@@ -70,6 +71,17 @@ describe('Rating Component', () => {
   test('Should render review count propperly', () => {
     let wrapper = render(<Ratings product={sampleData[0]} />);
     expect(wrapper.find('.num-ratings').text()).to.equal('53155 Reviews');
+  });
+});
+
+describe('Desc Component', () => {
+  test('Should contain essential elements', () => {
+    let wrapper = shallow(<Desc product={sampleData[0]} />);
+    expect(wrapper.find('p')).to.have.lengthOf(1);
+  });
+  test('Should render desc properly', () => {
+    let wrapper = render(<Desc product={sampleData[0]} />);
+    expect(wrapper.find('p').text()).to.be.an('string');
   });
 });
 
