@@ -51,7 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <UniversalStyle>
-        <ProductDisplay product={this.state.product} />
+        <ProductDisplay product={this.state.product} id="product-display" />
       </UniversalStyle>
     )
   }

@@ -46,7 +46,6 @@ let Ratings = (props) => {
         stars.push(<Star/>);
       }
     }
-    console.log(stars);
   }
   return (
     <ReviewContainer id="ratings">

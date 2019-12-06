@@ -35,10 +35,6 @@ let Quantity = (props) => {
     }
   })
 
-  // console.log(document.getElementById('counter').value);
-
-  // if(document.getElementById('counter').innerText )
-
   return (
     <QuantityCont id="quantity">
       <div className="qty-txt">
@@ -47,12 +43,10 @@ let Quantity = (props) => {
       <Counter className="qty-select">
         <FaMinus id="sub" onClick={() => {
           (count > 1) && (setCount(count-1)) || (count === 2)
-          // && (document.getElementById('sub').style.color = "rgba(0,0,0,0.2)") // Ensure the user doesnt go below 1
           }}/>
         <h4 id="counter">{count}</h4>
         <FaPlus id="add" onClick={() => {
           setCount(count+1);
-          // document.getElementById('sub').style.color = "rgba(0,0,0,1)";
           }}/>
       </Counter>
     </QuantityCont>
