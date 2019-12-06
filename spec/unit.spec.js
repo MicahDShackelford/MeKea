@@ -1,11 +1,12 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {shallow, render} from 'enzyme';
 import {expect, before} from 'chai';
 import sampleData from './sampleData';
 import App from '../client/src/components/App';
 import ProductDisplay from '../client/src/components/ProductDisplay';
 import Quantity from '../client/src/components/Quantity';
 import Tagline from '../client/src/components/Tagline';
+import Ratings from '../client/src/components/Ratings';
 
 describe('App Component', () => {
   test('Should Contain essential elements', () => {
@@ -27,7 +28,7 @@ describe('ProductDisplay Component', () => {
   })
 });
 
-describe('ProductDisplay Component', () => {
+describe('Tagline Component', () => {
   test('Should contain essential elements', () => {
     let wrapper = shallow(<Tagline product={sampleData[0]}/>, {disableLifecycleMethods: true});
     expect(wrapper.find('h2')).to.have.lengthOf(1);
@@ -48,6 +49,27 @@ describe('ProductDisplay Component', () => {
     let wrapper = shallow(<Tagline product={sampleData[0]}/>, {disableLifecycleMethods: true});
     expect(wrapper.find('h1').text()).to.be.an('string')
     expect(wrapper.find('h1').text()).to.be.equal('$338.59');
+  });
+});
+
+describe('Rating Component', () => {
+  test('Should contain essential elements', () => {
+    let wrapper = shallow(<Ratings product={sampleData[0]} />);
+    expect(wrapper.find('.star-ratings')).to.have.lengthOf(1);
+    expect(wrapper.find('.num-ratings')).to.have.lengthOf(1);
+  });
+  test('Should render stars propperly', () => {
+    let wrapper = shallow(<Ratings product={sampleData[0]} />);
+    expect(wrapper.find('.filled')).to.have.lengthOf(1);
+    expect(wrapper.find('.outline')).to.have.lengthOf(4);
+  });
+  test('Should render text rating propperly', () => {
+    let wrapper = shallow(<Ratings product={sampleData[0]} />);
+    expect(wrapper.find('p').text()).to.equal('1.0');
+  });
+  test('Should render review count propperly', () => {
+    let wrapper = render(<Ratings product={sampleData[0]} />);
+    expect(wrapper.find('.num-ratings').text()).to.equal('53155 Reviews');
   });
 });
 

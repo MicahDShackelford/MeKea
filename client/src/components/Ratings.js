@@ -41,9 +41,9 @@ let Ratings = (props) => {
   if(props.product.name) {
     for(var i = 0; i < 5; i++) {
       if(i < props.product.review.stars) {
-        stars.push(<FilledStar/>);
+        stars.push(<FilledStar className="filled"/>);
       }else {
-        stars.push(<Star/>);
+        stars.push(<Star className="outline"/>);
       }
     }
   }
