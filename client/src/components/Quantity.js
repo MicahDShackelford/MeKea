@@ -41,7 +41,7 @@ let Quantity = (props) => {
           (count > 1) && (setCount(count-1)) || (count === 2) && (document.getElementById('sub').style.color = "rgba(0,0,0,0.2)") // Ensure the user doesnt go below 1
           }}/>
         <h4>{count}</h4>
-        <FaPlus onClick={() => {
+        <FaPlus id="add" onClick={() => {
           setCount(count+1);
           document.getElementById('sub').style.color = "rgba(0,0,0,1)";
           }}/>
