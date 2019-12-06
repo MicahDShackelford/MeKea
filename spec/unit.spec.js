@@ -8,6 +8,7 @@ import Quantity from '../client/src/components/Quantity';
 import Tagline from '../client/src/components/Tagline';
 import Ratings from '../client/src/components/Ratings';
 import Desc from '../client/src/components/Desc';
+import Options from '../client/src/components/Options';
 
 describe('App Component', () => {
   test('Should Contain essential elements', () => {
@@ -82,6 +83,22 @@ describe('Desc Component', () => {
   test('Should render desc properly', () => {
     let wrapper = render(<Desc product={sampleData[0]} />);
     expect(wrapper.find('p').text()).to.be.an('string');
+  });
+});
+
+describe('Options Component', () => {
+  test('Should render proper number of dropdowns based on the product passed in', () => {
+    let wrapper = render(<Options product={sampleData[0]} />);
+    expect(wrapper.find('.dropdown')).to.have.lengthOf(2);
+  });
+  test('Should render modals properly based on data', () => {
+    let wrapper = render(<Options product={sampleData[0]} />);
+    expect(wrapper.find('#modal-Color')).to.have.lengthOf(1);
+    expect(wrapper.find('#modal-Size')).to.have.lengthOf(1);
+    expect(wrapper.find('#modal-Color h1').text()).to.equal('Choose Color');
+    expect(wrapper.find('#modal-Size h1').text()).to.equal('Choose Size');
+    expect(wrapper.find('#modal-Color img')).to.have.lengthOf(2);
+    expect(wrapper.find('#modal-Size img')).to.have.lengthOf(2);
   });
 });
 
