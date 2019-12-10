@@ -8,7 +8,6 @@ import ButtonGroup from './ButtonGroup';
 import AdditionalInformation from './AdditionalInformation';
 
 let ProductDisplay = (props) => {
-  console.log(props);
   return (
     <div id="product-display">
       <Tagline product={props.product} />

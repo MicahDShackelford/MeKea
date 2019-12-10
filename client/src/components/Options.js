@@ -147,7 +147,7 @@ let Options = (props) => {
     <WeightedP>This price reflects slected options.</WeightedP>
         {props.product.options.map((option) => (
           <div key={option.name}>
-            <Dropdown onClick={modalToggle} id={`dropdown-${option.name}`}>
+            <Dropdown className="dropdown" onClick={modalToggle} id={`dropdown-${option.name}`}>
               <DropdownText>
                 <h5>{option.name}</h5>
                 <p>{option.options[0].name}</p>

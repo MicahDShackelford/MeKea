@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   grabParams() {
-    let pid = new URLSearchParams(document.location.search.substring(1)).get('pid');
+    let pid = new URLSearchParams(document.location.search.substring(1))   .get('pid') || 1;
     fetch(`http://127.0.0.1:3001/product/${pid}`)
       .then((res) => {
         return res.json();
@@ -51,7 +51,7 @@ class App extends React.Component {
   render() {
     return (
       <UniversalStyle>
-        <ProductDisplay product={this.state.product} />
+        <ProductDisplay product={this.state.product} id="product-display" />
       </UniversalStyle>
     )
   }
