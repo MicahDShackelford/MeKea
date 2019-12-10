@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { MdStar } from 'react-icons/md';
 
-const FilledStar = styled(MdStar)`
+const StarFilled = styled(MdStar)`
   color: #FFD200;
   font-size: 1.5em;
 `
-const Star = styled(MdStar)`
+const StarOutline = styled(MdStar)`
   color: #EEEEEE;
   font-size: 1.5em;
 `
@@ -41,9 +41,9 @@ let Ratings = (props) => {
   if(props.product.name) {
     for(var i = 0; i < 5; i++) {
       if(i < props.product.review.stars) {
-        stars.push(<FilledStar className="filled"/>);
+        stars.push(<StarFilled className="filled"/>);
       }else {
-        stars.push(<Star className="outline"/>);
+        stars.push(<StarOutline className="outline"/>);
       }
     }
   }
