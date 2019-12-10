@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ProductDisplay from './ProductDisplay';
 
 const UniversalStyle = styled.div`
-  font-family: 'Noto Sans';
+  font-family: 'Noto Sans' !important;
   max-width: 400px;
   display: flex;
   flex-direction: column;
