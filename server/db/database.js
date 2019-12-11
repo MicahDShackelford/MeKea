@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = Promise; // Set the default promises
 
-mongoose.connect('mongodb://127.0.0.53/products', {useNewUrlParser: true, useUnifiedTopology: true}); //Connect to the options database
+mongoose.connect('mongodb://127.0.0.1/products', {useNewUrlParser: true, useUnifiedTopology: true}); //Connect to the options database
 
 const db = mongoose.connection;
 
