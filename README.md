@@ -10,7 +10,10 @@ You can change the product id (1-100) for different products (Ex. http://mekea.m
 http://mekea.mdsh.io:3000/?pid=1
 
 ## Photos
-Coming soon
+#### My Component
+![single](../assets/1.gif?raw=true)
+#### All Components
+![all](../assets/2.gif?raw=true)
 
 ## Related Projects
 
