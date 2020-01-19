@@ -1,6 +1,6 @@
-# Project Name
+# MeKea
 
-> Project description
+> A segment of an application for presenting and selling furniture.
 
 ## Demo
 #### My Component
