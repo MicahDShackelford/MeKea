@@ -3,8 +3,11 @@
 > Project description
 
 ## Demo
+#### My Component
 http://mekea.mdsh.io/
 You can change the product id (1-100) for different products (Ex. http://mekea.mdsh.io/?pid=25)
+#### Complete project proxied together
+http://mekea.mdsh.io:3000/?pid=1
 
 ## Photos
 Coming soon
