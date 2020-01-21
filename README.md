@@ -22,9 +22,24 @@ http://mekea.mdsh.io:3000/?pid=1
 
 ## Table of Contents
 
+1. [Techs](#Techs)
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
+
+## Techs
+
+- AWS (EC2)
+- Babel
+- Webpack
+- MongoDB
+- Express
+- React
+- React DOM
+- Styled Components
+- Jest
+- Enzyme
+- Chai
 
 ## Usage
 
